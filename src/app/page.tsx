@@ -1,7 +1,14 @@
+import Feed from '@/components/Feed';
+import { Head } from '@/components/Head';
+
 export default function Home() {
   return (
-    <div>
-      <p className="title">teste</p>
-    </div>
+    <section className="mainContainer container">
+      <Head
+        title="Fotos"
+        description="Home do site Dogs, com o feed de fotos."
+      />
+      <Feed />
+    </section>
   );
 }
