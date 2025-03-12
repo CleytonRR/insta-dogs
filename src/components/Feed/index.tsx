@@ -38,7 +38,7 @@ const Feed = ({ user }: FeedProps) => {
   }, [infinite]);
 
   return (
-    <div>
+    <section>
       {modalPhoto && (
         <FeedModal
           photo={modalPhoto as { id: string }}
@@ -59,7 +59,7 @@ const Feed = ({ user }: FeedProps) => {
           Não existem mais postagens.
         </p>
       )}
-    </div>
+    </section>
   );
 };
 
