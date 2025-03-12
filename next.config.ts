@@ -10,6 +10,13 @@ const nextConfig: NextConfig = {
         pathname: '/wp-content/uploads/**',
         search: '',
       },
+      {
+        protocol: 'https',
+        hostname: 'dogsapi.origamid.dev',
+        port: '',
+        pathname: '/files/**',
+        search: '',
+      },
     ],
   },
 };
