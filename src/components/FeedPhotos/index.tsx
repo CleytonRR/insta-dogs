@@ -34,7 +34,9 @@ const FeedPhotos = ({
   if (loading) return <Loading />;
   if (data)
     return (
-      <ul className={`animeLeft`}>
+      <ul
+        className={`animeLeft mb-4 grid grid-cols-3 justify-items-center gap-4 sm:grid-cols-2`}
+      >
         {(
           (data as Array<{
             id: string;

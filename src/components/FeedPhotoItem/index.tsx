@@ -15,9 +15,14 @@ const FeedPhotosItem = ({ photo, setModalPhoto }: FeedPhotosItemProps) => {
     setModalPhoto(photo);
   }
   return (
-    <li onClick={handleClick}>
+    <li
+      className="grid cursor-pointer overflow-hidden rounded-sm"
+      onClick={handleClick}
+    >
       <Image src={photo.src} alt={photo.title} width={1000} height={1000} />
-      <span>{photo.acessos}</span>
+      <span className="grid-area hidden grid-cols-1 grid-rows-1 items-center justify-center bg-black/[0.3] text-center text-base text-white">
+        {photo.acessos}
+      </span>
     </li>
   );
 };

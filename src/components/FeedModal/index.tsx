@@ -25,7 +25,10 @@ const FeedModal = ({ photo, setModalPhoto }: FeedModalParams) => {
   }
 
   return (
-    <div onClick={handleOutsideClick}>
+    <div
+      className="sm:pr[calc(2rem_+_15px)] fixed left-0 top-0 z-50 flex h-svh w-svw bg-black/[0.4] py-8 pl-16 pr-[calc(4rem_+15px)] sm:pl-8 sm:pt-8"
+      onClick={handleOutsideClick}
+    >
       {error && <Error error={error} />}
       {loading && <Loading />}
       {data && <PhotoContent data={data} />}
