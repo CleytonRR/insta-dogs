@@ -1,6 +1,7 @@
 import './globals.css';
 import { spectral } from '../styles/fonts';
 import { Metadata } from 'next';
+import { Menu } from '@/components/Menu';
 
 export const metadata: Metadata = {
   title: 'Dogs Next',
@@ -14,7 +15,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br">
-      <body className={`${spectral.variable} antialiased`}>{children}</body>
+      <body className={`${spectral.variable} antialiased`}>
+        <Menu />
+        {children}
+      </body>
     </html>
   );
 }
