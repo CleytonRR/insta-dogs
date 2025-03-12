@@ -14,9 +14,15 @@ const PhotoContent = ({ data }: PhotoContentProps) => {
   const { photo } = data;
 
   return (
-    <div>
+    <div className="gridgrid-cols-[36rem_20rem] m-auto h-[576px] scale-75 grid-rows-[auto_1fr_auto] overflow-hidden rounded-sm opacity-0">
       <div>
-        <Image src={photo.src} alt={photo.title} />
+        <Image
+          src={photo.src}
+          alt={photo.title}
+          width={1000}
+          height={1000}
+          className="row-span-1"
+        />
       </div>
       {/* TODO: add detail  */}
       {/* <div className={styles.details}>
