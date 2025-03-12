@@ -23,8 +23,8 @@ const Loading = () => {
   }
 
   return (
-    <div>
-      <div>
+    <div className="absolute left-0 top-0 z-50 flex h-svh w-full">
+      <div className="m-auto flex h-20 w-20 items-center justify-center rounded-full bg-white/[0.5] pl-1.5">
         <svg
           width="46"
           height="31"
