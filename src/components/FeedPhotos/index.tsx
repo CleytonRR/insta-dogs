@@ -35,7 +35,7 @@ const FeedPhotos = ({
   if (data)
     return (
       <ul
-        className={`animeLeft mb-4 grid grid-cols-3 justify-items-center gap-4 sm:grid-cols-2`}
+        className={`animeLeft mb-4 grid grid-cols-2 justify-items-center gap-[1rem] md:grid-cols-3`}
       >
         {(
           (data as Array<{
@@ -44,11 +44,12 @@ const FeedPhotos = ({
             title: string;
             acessos: string;
           }>) ?? []
-        ).map((photo) => (
+        ).map((photo, index) => (
           <FeedPhotosItem
             key={photo.id}
             photo={photo}
             setModalPhoto={setModalPhoto}
+            index={index}
           />
         ))}
       </ul>
