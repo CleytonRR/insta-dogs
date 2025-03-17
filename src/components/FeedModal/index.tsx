@@ -1,5 +1,5 @@
 import React, { MouseEvent } from 'react';
-import { PHOTO_GET } from '@/hooks/Api';
+import { PHOTO_GET } from '@/services/api';
 import useFetch from '@/hooks/useFetch';
 import Error from '../Helpers/Error';
 import Loading from '../Helpers/Loading';

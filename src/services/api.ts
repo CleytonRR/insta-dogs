@@ -1,21 +1,14 @@
-// ADJUST TYPE AFTER
+// @ts-nocheck
 
 export const API_URL = 'https://dogsapi.origamid.dev/json';
 
-export function TOKEN_POST(body: never) {
+export function TOKEN_POST() {
   return {
     url: API_URL + '/jwt-auth/v1/token',
-    options: {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(body),
-    },
   };
 }
 
-export function TOKEN_VALIDATE_POST(token: string) {
+export function TOKEN_VALIDATE_POST(token) {
   return {
     url: API_URL + '/jwt-auth/v1/token/validate',
     options: {
@@ -27,7 +20,7 @@ export function TOKEN_VALIDATE_POST(token: string) {
   };
 }
 
-export function USER_GET(token: string) {
+export function USER_GET(token) {
   return {
     url: API_URL + '/api/user',
     options: {
@@ -39,7 +32,7 @@ export function USER_GET(token: string) {
   };
 }
 
-export function USER_POST(body: never) {
+export function USER_POST(body) {
   return {
     url: API_URL + '/api/user',
     options: {
@@ -52,7 +45,7 @@ export function USER_POST(body: never) {
   };
 }
 
-export function PHOTO_POST(formData: never, token: string) {
+export function PHOTO_POST(formData, token) {
   return {
     url: API_URL + '/api/photo',
     options: {
@@ -65,13 +58,7 @@ export function PHOTO_POST(formData: never, token: string) {
   };
 }
 
-type PHOTOS_GET_PARAMS = {
-  page: number;
-  total: number;
-  user: never;
-};
-
-export function PHOTOS_GET({ page, total, user }: PHOTOS_GET_PARAMS) {
+export function PHOTOS_GET({ page, total, user }) {
   return {
     url: `${API_URL}/api/photo/?_page=${page}&_total=${total}&_user=${user}`,
     options: {
@@ -81,7 +68,7 @@ export function PHOTOS_GET({ page, total, user }: PHOTOS_GET_PARAMS) {
   };
 }
 
-export function PHOTO_GET(id: string) {
+export function PHOTO_GET(id) {
   return {
     url: `${API_URL}/api/photo/${id}`,
     options: {
@@ -91,7 +78,7 @@ export function PHOTO_GET(id: string) {
   };
 }
 
-export function COMMENT_POST(id: string, body: never) {
+export function COMMENT_POST(id, body) {
   return {
     url: `${API_URL}/api/comment/${id}`,
     options: {
@@ -105,7 +92,7 @@ export function COMMENT_POST(id: string, body: never) {
   };
 }
 
-export function PHOTO_DELETE(id: string) {
+export function PHOTO_DELETE(id) {
   return {
     url: `${API_URL}/api/photo/${id}`,
     options: {
@@ -117,7 +104,7 @@ export function PHOTO_DELETE(id: string) {
   };
 }
 
-export function PASSWORD_LOST(body: never) {
+export function PASSWORD_LOST(body) {
   return {
     url: API_URL + '/api/password/lost',
     options: {
@@ -130,7 +117,7 @@ export function PASSWORD_LOST(body: never) {
   };
 }
 
-export function PASSWORD_RESET(body: never) {
+export function PASSWORD_RESET(body) {
   return {
     url: API_URL + '/api/password/reset',
     options: {
