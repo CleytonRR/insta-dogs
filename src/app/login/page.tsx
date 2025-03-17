@@ -1,3 +1,11 @@
+import { FormTitle } from '@/components/FormTitle';
+import LoginForm from '@/components/Login';
+
 export default function Login() {
-  return <h1>Login</h1>;
+  return (
+    <>
+      <FormTitle>Login</FormTitle>
+      <LoginForm />
+    </>
+  );
 }
