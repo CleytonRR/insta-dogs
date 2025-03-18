@@ -1,6 +1,6 @@
-import { LoginState } from '@/types/Forms';
+import { ActionResponse } from '@/types/Forms';
 
-export default function apiError(error: unknown): LoginState {
+export default function apiError(error: unknown): ActionResponse {
   if (error instanceof Error) {
     return {
       data: null,
