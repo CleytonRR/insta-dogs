@@ -35,7 +35,7 @@ const FeedPhotos = ({
   if (data)
     return (
       <ul
-        className={`animeLeft mb-4 grid grid-cols-2 justify-items-center gap-[1rem] md:grid-cols-3`}
+        className={`animate-animeLeft mb-4 grid grid-cols-2 justify-items-center gap-[1rem] md:grid-cols-3`}
       >
         {(
           (data as Array<{
