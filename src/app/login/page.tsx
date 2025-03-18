@@ -3,9 +3,9 @@ import LoginForm from '@/components/Login';
 
 export default function Login() {
   return (
-    <>
+    <section className="animeLeft">
       <FormTitle>Login</FormTitle>
       <LoginForm />
-    </>
+    </section>
   );
 }

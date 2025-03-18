@@ -3,6 +3,9 @@
 import login from '@/actions/login';
 import { useFormState, useFormStatus } from 'react-dom';
 import { Button } from '@/components/Button';
+import { Input } from '../Input';
+import Error from '../Helpers/Error';
+import { useEffect } from 'react';
 
 function FormButton() {
   const { pending } = useFormStatus();
@@ -10,9 +13,13 @@ function FormButton() {
   return (
     <>
       {pending ? (
-        <Button disabled={pending}>Enviando...</Button>
+        <Button className="self-start" disabled={pending}>
+          Enviando...
+        </Button>
       ) : (
-        <Button disabled={false}>Entrar</Button>
+        <Button className="self-start" disabled={false}>
+          Entrar
+        </Button>
       )}
     </>
   );
@@ -25,17 +32,20 @@ export default function LoginForm() {
     data: null,
   });
 
+  useEffect(() => {
+    if (state.ok) window.location.href = '/conta';
+  }, [state.ok]);
+
   return (
     <>
-      <form action={action} className="flex flex-col items-start">
-        <input type="text" name="username" placeholder="usuário" />
-
-        <input type="password" name="password" placeholder="senha" />
+      <form action={action} className="flex flex-col">
+        <Input label="Usuário" type="text" name="username" />
+        <Input label="Password" type="password" name="password" />
 
         <FormButton />
-      </form>
 
-      <p>{state?.error}</p>
+        <Error error={state.error} />
+      </form>
     </>
   );
 }
