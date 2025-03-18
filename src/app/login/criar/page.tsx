@@ -1,3 +1,5 @@
+import { FormTitle } from '@/components/FormTitle';
+import Signup from '@/components/Signup';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -7,8 +9,10 @@ export const metadata: Metadata = {
 
 export default function Criar() {
   return (
-    <main>
-      <h1>Criar</h1>
-    </main>
+    <section className="animate-animeLeft">
+      <FormTitle>Cadastra-se</FormTitle>
+
+      <Signup />
+    </section>
   );
 }
