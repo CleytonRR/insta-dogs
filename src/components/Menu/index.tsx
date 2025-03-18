@@ -17,6 +17,7 @@ export const Menu = () => {
         >
           <Image src={dogIcon} alt="dog-icon" priority />
         </Link>
+
         {logado ? (
           <Link
             className="text-[#333 items-center] flex items-center gap-2"
