@@ -15,6 +15,21 @@ const config: Config = {
       fontFamily: {
         spectral: ['var(--font-spectral)'],
       },
+      animation: {
+        animeLeft: 'animeLeft 0.3s forwards',
+      },
+      keyframes: {
+        animeLeft: {
+          '0%': {
+            opacity: '0',
+            transform: 'translateX(-20px)',
+          },
+          '100%': {
+            opacity: '1',
+            transform: 'initial',
+          },
+        },
+      },
     },
   },
   plugins: [],
