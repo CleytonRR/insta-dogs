@@ -1,13 +1,13 @@
 'use server';
 
 import { TOKEN_POST } from '@/services/api';
-import { LoginState } from '@/types/Forms';
+import { ActionResponse } from '@/types/Forms';
 import apiError from '@/utils/api-error';
 import { cookies } from 'next/headers';
 
 const DAY_IN_MINUTE = 60 * 60 * 24;
 
-export default async function login(state: LoginState, formData: FormData) {
+export default async function login(state: ActionResponse, formData: FormData) {
   const username = formData.get('username') as string | null;
   const password = formData.get('password') as string | null;
 
