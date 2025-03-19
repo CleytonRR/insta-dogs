@@ -1,3 +1,9 @@
-export default function UserById({ params }: { params: { user: string } }) {
-  return <h1>User by {params.user}</h1>;
+export default async function UserById({
+  params,
+}: {
+  params: Promise<{ user: string }>;
+}) {
+  const { user } = await params;
+
+  return <h1>User by {user}</h1>;
 }
