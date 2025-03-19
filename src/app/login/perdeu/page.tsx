@@ -1,3 +1,5 @@
+import { FormTitle } from '@/components/FormTitle';
+import LostPasswordForm from '@/components/LostPassword';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -6,5 +8,10 @@ export const metadata: Metadata = {
 };
 
 export default function Perdeu() {
-  return <h1>Perdeu</h1>;
+  return (
+    <section className="animate-animeLeft">
+      <FormTitle>Perdeu a senha?</FormTitle>
+      <LostPasswordForm />
+    </section>
+  );
 }
