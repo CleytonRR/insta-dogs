@@ -42,6 +42,6 @@ export default async function userGet() {
       error: '',
     } as ActionResponse<User>;
   } catch (error) {
-    return apiError(error);
+    return apiError<User>(error);
   }
 }
