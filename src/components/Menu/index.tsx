@@ -12,7 +12,9 @@ export const Menu = async () => {
 
   return (
     <header className="fixed top-0 z-50 w-full bg-white shadow-[0px_1px_1px_rgba(0,0,0,0.1)]">
-      <nav className={`container flex h-16 items-center justify-between`}>
+      <nav
+        className={`mx-auto mt-0 flex h-16 max-w-[50rem] items-center justify-between px-4 pt-0`}
+      >
         <Link
           className={'flex items-center text-[#333]'}
           href="/"
