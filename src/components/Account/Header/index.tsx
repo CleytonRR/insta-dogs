@@ -8,6 +8,8 @@ import { useEffect, useState } from 'react';
 import { AddIcon, FeedIcon, LogoutIcon, StaticIcon } from '@/components/Icons';
 import { FormTitle } from '@/components/FormTitle';
 import cn from '@/utils/cn';
+import logout from '@/actions/logout';
+import { useUser } from '@/context/userContext';
 
 function getTitle(pathName: string) {
   switch (pathName) {
@@ -27,9 +29,16 @@ export const AccountHeader = () => {
 
   const mobile = useMedia('(max-width: 40rem');
 
+  const { setUser } = useUser();
+
   useEffect(() => {
     setMobileMenu(false);
   }, []);
+
+  async function handleLogout() {
+    await logout();
+    setUser(null);
+  }
 
   return (
     <header className="relative mb-8 mt-4 grid grid-cols-[1fr_auto] content-center">
@@ -76,7 +85,10 @@ export const AccountHeader = () => {
           <AddIcon />
           {mobile && 'Adicionar Foto'}
         </Link>
-        <button className="flex h-10 w-10 cursor-pointer items-center justify-center rounded border border-transparent bg-[#eee] transition-all hover:border-[#333] hover:bg-white hover:shadow-[0_0_0_3px_#eee] focus:border-[#333] focus:bg-white focus:shadow-[0_0_0_3px_#eee]">
+        <button
+          onClick={handleLogout}
+          className="flex h-10 w-10 cursor-pointer items-center justify-center rounded border border-transparent bg-[#eee] transition-all hover:border-[#333] hover:bg-white hover:shadow-[0_0_0_3px_#eee] focus:border-[#333] focus:bg-white focus:shadow-[0_0_0_3px_#eee]"
+        >
           <LogoutIcon />
           {mobile && 'Sair'}
         </button>
