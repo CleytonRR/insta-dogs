@@ -1,3 +1,4 @@
+import PostPhotoForm from '@/components/PostPhotoForm';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -6,5 +7,5 @@ export const metadata: Metadata = {
 };
 
 export default function Postar() {
-  return <h1>Postar</h1>;
+  return <PostPhotoForm />;
 }

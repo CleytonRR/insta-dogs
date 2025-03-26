@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -11,7 +13,7 @@ type FeedPhotosItemProps = {
     title: string;
     acessos: string;
   };
-  setModalPhoto: (value: object) => void;
+  setModalPhoto?: (value: object) => void;
   index: number;
 };
 
@@ -21,7 +23,7 @@ const FeedPhotosItem = ({
   index,
 }: FeedPhotosItemProps) => {
   function handleClick() {
-    setModalPhoto(photo);
+    if (setModalPhoto) setModalPhoto(photo);
   }
 
   return (
