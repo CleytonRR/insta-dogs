@@ -1,4 +1,4 @@
-import { FormTitle } from '@/components/FormTitle';
+import { Title } from '@/components/FormTitle';
 import LoginForm from '@/components/Login';
 import { Metadata } from 'next';
 
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function Login() {
   return (
     <section className="animate-animeLeft">
-      <FormTitle>Login</FormTitle>
+      <Title>Login</Title>
       <LoginForm />
     </section>
   );
