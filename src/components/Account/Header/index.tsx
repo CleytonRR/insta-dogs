@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
 import { AddIcon, FeedIcon, LogoutIcon, StaticIcon } from '@/components/Icons';
-import { FormTitle } from '@/components/FormTitle';
+import { Title } from '@/components/FormTitle';
 import cn from '@/utils/cn';
 import logout from '@/actions/logout';
 import { useUser } from '@/context/userContext';
@@ -42,7 +42,7 @@ export const AccountHeader = () => {
 
   return (
     <header className="relative mb-8 mt-4 grid grid-cols-[1fr_auto] content-center">
-      <FormTitle className="mt-0">{getTitle(pathName)}</FormTitle>
+      <Title className="mt-0">{getTitle(pathName)}</Title>
 
       {mobile && (
         <button

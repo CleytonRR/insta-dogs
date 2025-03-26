@@ -1,4 +1,4 @@
-import { FormTitle } from '@/components/FormTitle';
+import { Title } from '@/components/FormTitle';
 import ResetPassword from '@/components/ResetPassword';
 import { Metadata } from 'next';
 
@@ -20,7 +20,7 @@ export default async function Resetar({ searchParams }: ResetarProps) {
 
   return (
     <section className="animate-animeLeft">
-      <FormTitle>Resetar senha</FormTitle>
+      <Title>Resetar senha</Title>
 
       <ResetPassword token={params.key} login={params.login} />
     </section>

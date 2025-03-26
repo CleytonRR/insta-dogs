@@ -1,9 +1,9 @@
 import cn from '@/utils/cn';
 import { HTMLAttributes } from 'react';
 
-type FormTitle = HTMLAttributes<HTMLHeadingElement>;
+type FormTitleProps = HTMLAttributes<HTMLHeadingElement>;
 
-export function FormTitle({ children, className, ...rest }: FormTitle) {
+export function Title({ children, className, ...rest }: FormTitleProps) {
   return (
     <h1
       className={cn(
