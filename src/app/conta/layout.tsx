@@ -1,3 +1,5 @@
+import { AccountHeader } from '@/components/Account/Header';
+import { Container } from '@/components/Container';
 import { ReactNode } from 'react';
 
 type LayoutProps = {
@@ -6,11 +8,9 @@ type LayoutProps = {
 
 export default function Layout({ children }: LayoutProps) {
   return (
-    <>
-      <nav>
-        <p>Testando menu</p>
-      </nav>
+    <Container>
+      <AccountHeader />
       {children}
-    </>
+    </Container>
   );
 }
