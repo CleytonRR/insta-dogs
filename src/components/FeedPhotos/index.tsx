@@ -4,6 +4,7 @@ import React, { useCallback, useEffect, useRef, useState } from 'react';
 import FeedPhotosItem from '../FeedPhotoItem';
 import { Photo, PhotosGetParams } from '@/types/Forms';
 import getPhotos from '@/actions/getPhotos';
+import Loading from '../Loading';
 
 type FeedPhotosProps = Pick<PhotosGetParams, 'user'> & {
   photos?: Photo[] | null;
@@ -78,7 +79,14 @@ const FeedPhotos = ({ photos, user }: FeedPhotosProps) => {
         ))}
       </ul>
 
-      {loading && <p className="text-center">Carregando...</p>}
+      <div className="mx-auto my-4 flex h-[100px]">
+        {!isInfiniteScroll && (
+          <p className="m-auto text-center text-[#888]">
+            Não existem mais postagens.
+          </p>
+        )}
+        {loading && <Loading />}
+      </div>
     </section>
   );
 };
