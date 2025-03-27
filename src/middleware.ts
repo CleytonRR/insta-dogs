@@ -6,8 +6,6 @@ export function middleware(request: NextRequest) {
 
   const token = request.cookies.get('token')?.value;
 
-  console.log(token);
-
   if (isLoginPage && token) {
     return NextResponse.redirect(new URL('/conta', request.url));
   }
