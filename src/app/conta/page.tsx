@@ -1,6 +1,6 @@
 import getPhotos from '@/actions/getPhotos';
 import userGet from '@/actions/userGet';
-import FeedPhotosItem from '@/components/FeedPhotoItem';
+import FeedPhotos from '@/components/FeedPhotos';
 import Link from 'next/link';
 
 export default async function Conta() {
@@ -10,13 +10,7 @@ export default async function Conta() {
   return (
     <main>
       {photos?.length ? (
-        <ul
-          className={`mb-4 grid animate-animeLeft grid-cols-2 justify-items-center gap-[1rem] md:grid-cols-3`}
-        >
-          {photos.map((photo, index) => (
-            <FeedPhotosItem key={photo.id} photo={photo} index={index} />
-          ))}
-        </ul>
+        <FeedPhotos photos={photos} user={user?.username} />
       ) : (
         <>
           <span className="mb-2 block text-gray-600">
