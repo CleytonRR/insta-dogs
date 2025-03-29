@@ -82,7 +82,7 @@ const FeedPhotos = ({ photos, user }: FeedPhotosProps) => {
       <div className="mx-auto my-4 flex h-[100px]">
         {!isInfiniteScroll && (
           <p className="m-auto text-center text-[#888]">
-            Não existem mais postagens.
+            Não existem mais postagem para listar.
           </p>
         )}
         {loading && <Loading />}
