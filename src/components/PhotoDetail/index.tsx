@@ -1,14 +1,20 @@
+'use client';
+
 import { Photo } from '@/types/Forms';
 import Image from 'next/image';
 
 import Link from 'next/link';
 import { Title } from '../FormTitle';
+import { useUser } from '@/context/userContext';
+import DeletePhotoButton from '../DeletePhotoButton';
 
 type PhotoDetailProps = {
   photo: Photo;
 };
 
 export default function PhotoDetail({ photo }: PhotoDetailProps) {
+  const { user } = useUser();
+
   return (
     <>
       <div className="grid-rows-[auto_minmax(0,1fr)_auto]">
@@ -23,12 +29,16 @@ export default function PhotoDetail({ photo }: PhotoDetailProps) {
       <div className="p-0 pt-4">
         <div>
           <p className="mb-4 flex items-center justify-between opacity-50">
-            <Link
-              className="hover:underline"
-              href={`/perfil/${photo?.author || ''}`}
-            >
-              @{photo.author}
-            </Link>
+            {user?.username === photo.author ? (
+              <DeletePhotoButton id={photo.id} />
+            ) : (
+              <Link
+                className="hover:underline"
+                href={`/perfil/${photo?.author || ''}`}
+              >
+                @{photo.author}
+              </Link>
+            )}
             <span
               className={
                 "before:mr-2 before:inline-block before:h-2.5 before:w-4 before:bg-[url(/assets/visualizacao-black.svg)] before:content-['']"
