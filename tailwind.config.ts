@@ -17,6 +17,7 @@ const config: Config = {
       },
       animation: {
         animeLeft: 'animeLeft 0.3s forwards',
+        scaleUp: 'scaleUp 0.3s forwards',
       },
       keyframes: {
         animeLeft: {
@@ -26,6 +27,12 @@ const config: Config = {
           },
           '100%': {
             opacity: '1',
+            transform: 'initial',
+          },
+        },
+        scaleUp: {
+          to: {
+            opacity: 'initial',
             transform: 'initial',
           },
         },
