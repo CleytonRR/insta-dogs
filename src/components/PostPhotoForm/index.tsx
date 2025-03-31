@@ -1,9 +1,9 @@
 'use client';
 
-import { useFormState, useFormStatus } from 'react-dom';
+import { useFormStatus } from 'react-dom';
 import { Button } from '@/components/Button';
 import { Input } from '../Input';
-import { ChangeEvent, useState } from 'react';
+import { ChangeEvent, useActionState, useState } from 'react';
 import userPostPhoto from '@/actions/userPostPhoto';
 
 function FormButton() {
@@ -25,7 +25,7 @@ function FormButton() {
 }
 
 export default function PostPhotoForm() {
-  const [state, action] = useFormState(userPostPhoto, {
+  const [state, action] = useActionState(userPostPhoto, {
     ok: false,
     error: '',
     data: null,
