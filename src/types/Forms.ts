@@ -35,9 +35,8 @@ export type Comment = {
 };
 
 export type PhotoDetail = {
-  photo: Photo & {
-    comments: Comment[];
-  };
+  photo: Photo;
+  comments: Comment[];
 };
 
 export type PhotosGetParams = {
